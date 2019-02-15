@@ -33,11 +33,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/valueCoin2Play"
+        android:id="@+id/valueCryptoDezireCash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="230 C2P"
+        android:text="230 CDZC"
         android:textSize="16sp"
         />
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="0.0002 C2P"
+            android:text="0.0002 CDZC"
             android:textSize="14sp"
             />
 

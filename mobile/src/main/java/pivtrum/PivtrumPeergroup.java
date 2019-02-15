@@ -1,7 +1,7 @@
 package pivtrum;
 
-import org.coin2playj.core.Address;
-import org.coin2playj.core.CoinDefinition;
+import org.cryptodezirecashj.core.Address;
+import org.cryptodezirecashj.core.CoinDefinition;
 import org.furszy.client.IoManager;
 import org.furszy.client.exceptions.ConnectionFailureException;
 import org.slf4j.Logger;

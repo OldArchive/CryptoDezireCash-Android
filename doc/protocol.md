@@ -1,7 +1,7 @@
-### Coin2Play wallet protocol
+### CryptoDezireCash wallet protocol
 
 
-Coin2Play server is based on electrum server. Tiene el mismo flujo.
+CryptoDezireCash server is based on electrum server. Tiene el mismo flujo.
 
 Cada request tiene su propia respuesta del lado del servidor, incluyendo los request de suscripciones.
 

@@ -1,6 +1,6 @@
 package chain;
 
-import org.coin2playj.core.PeerGroup;
+import org.cryptodezirecashj.core.PeerGroup;
 
 import java.util.Set;
 

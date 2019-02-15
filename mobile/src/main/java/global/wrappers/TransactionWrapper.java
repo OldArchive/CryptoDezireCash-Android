@@ -1,8 +1,8 @@
 package global.wrappers;
 
-import org.coin2playj.core.Coin;
-import org.coin2playj.core.Sha256Hash;
-import org.coin2playj.core.Transaction;
+import org.cryptodezirecashj.core.Coin;
+import org.cryptodezirecashj.core.Sha256Hash;
+import org.cryptodezirecashj.core.Transaction;
 
 import java.io.Serializable;
 import java.util.Map;

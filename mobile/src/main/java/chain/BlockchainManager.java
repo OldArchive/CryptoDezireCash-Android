@@ -4,27 +4,27 @@ import com.google.common.base.Stopwatch;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import global.utils.Io;
-import org.coin2playj.core.BlockChain;
-import org.coin2playj.core.CheckpointManager;
-import org.coin2playj.core.Peer;
-import org.coin2playj.core.PeerGroup;
-import org.coin2playj.core.Sha256Hash;
-import org.coin2playj.core.StoredBlock;
-import org.coin2playj.core.Transaction;
-import org.coin2playj.core.TransactionBroadcast;
-import org.coin2playj.core.listeners.PeerConnectedEventListener;
-import org.coin2playj.core.listeners.PeerDataEventListener;
-import org.coin2playj.core.listeners.PeerDisconnectedEventListener;
-import org.coin2playj.net.discovery.MultiplexingDiscovery;
-import org.coin2playj.net.discovery.PeerDiscovery;
-import org.coin2playj.net.discovery.PeerDiscoveryException;
-import org.coin2playj.params.MainNetParams;
-import org.coin2playj.params.RegTestParams;
-import org.coin2playj.params.TestNet3Params;
-import org.coin2playj.store.BlockStore;
-import org.coin2playj.store.BlockStoreException;
-import org.coin2playj.store.LevelDBBlockStore;
-import org.coin2playj.store.SPVBlockStore;
+import org.cryptodezirecashj.core.BlockChain;
+import org.cryptodezirecashj.core.CheckpointManager;
+import org.cryptodezirecashj.core.Peer;
+import org.cryptodezirecashj.core.PeerGroup;
+import org.cryptodezirecashj.core.Sha256Hash;
+import org.cryptodezirecashj.core.StoredBlock;
+import org.cryptodezirecashj.core.Transaction;
+import org.cryptodezirecashj.core.TransactionBroadcast;
+import org.cryptodezirecashj.core.listeners.PeerConnectedEventListener;
+import org.cryptodezirecashj.core.listeners.PeerDataEventListener;
+import org.cryptodezirecashj.core.listeners.PeerDisconnectedEventListener;
+import org.cryptodezirecashj.net.discovery.MultiplexingDiscovery;
+import org.cryptodezirecashj.net.discovery.PeerDiscovery;
+import org.cryptodezirecashj.net.discovery.PeerDiscoveryException;
+import org.cryptodezirecashj.params.MainNetParams;
+import org.cryptodezirecashj.params.RegTestParams;
+import org.cryptodezirecashj.params.TestNet3Params;
+import org.cryptodezirecashj.store.BlockStore;
+import org.cryptodezirecashj.store.BlockStoreException;
+import org.cryptodezirecashj.store.LevelDBBlockStore;
+import org.cryptodezirecashj.store.SPVBlockStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -277,7 +277,7 @@ public class BlockchainManager {
                     peerGroup.addPeerDiscovery(new PeerDiscovery() {
                         @Override
                         public InetSocketAddress[] getPeers(long services, long timeoutValue, TimeUnit timeUnit) throws PeerDiscoveryException {
-                            // No regtest in coin2play yet..
+                            // No regtest in cryptodezirecash yet..
                             return null; //RegtestUtil.getPeersToConnect(conf.getNetworkParams(),conf.getNode());
                         }
 

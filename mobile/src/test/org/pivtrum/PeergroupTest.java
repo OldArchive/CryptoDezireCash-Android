@@ -1,9 +1,9 @@
 /*
 package org.pivtrum;
 
-import org.coin2playj.core.Address;
-import org.coin2playj.core.Coin;
-import org.coin2playj.utils.MonetaryFormat;
+import org.cryptodezirecashj.core.Address;
+import org.cryptodezirecashj.core.Coin;
+import org.cryptodezirecashj.utils.MonetaryFormat;
 import org.furszy.client.exceptions.ConnectionFailureException;
 import org.junit.Test;
 import org.pivtrum.imp.AddressStoreImp;

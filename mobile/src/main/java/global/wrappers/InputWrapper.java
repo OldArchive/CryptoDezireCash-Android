@@ -1,8 +1,8 @@
 package global.wrappers;
 
-import org.coin2playj.core.NetworkParameters;
-import org.coin2playj.core.Sha256Hash;
-import org.coin2playj.core.TransactionOutput;
+import org.cryptodezirecashj.core.NetworkParameters;
+import org.cryptodezirecashj.core.Sha256Hash;
+import org.cryptodezirecashj.core.TransactionOutput;
 
 import java.io.Serializable;
 

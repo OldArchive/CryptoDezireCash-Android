@@ -8,16 +8,16 @@
     android:layout_height="fill_parent"
     android:keepScreenOn="true">
 
-    <coin2play.org.coin2playwallet.ui.camera.CameraSourcePreview
+    <cryptodezirecash.org.cryptodezirecashwallet.ui.camera.CameraSourcePreview
         android:id="@+id/preview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <coin2play.org.coin2playwallet.ui.camera.GraphicOverlay
+        <cryptodezirecash.org.cryptodezirecashwallet.ui.camera.GraphicOverlay
             android:id="@+id/graphicOverlay"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
 
-    </coin2play.org.coin2playwallet.ui.camera.CameraSourcePreview>
+    </cryptodezirecash.org.cryptodezirecashwallet.ui.camera.CameraSourcePreview>
 
 </LinearLayout>

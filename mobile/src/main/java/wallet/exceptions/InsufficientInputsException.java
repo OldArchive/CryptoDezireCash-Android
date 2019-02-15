@@ -1,6 +1,6 @@
 package wallet.exceptions;
 
-import org.coin2playj.core.Coin;
+import org.cryptodezirecashj.core.Coin;
 
 /**
  * Created by akshaynexus on 8/9/17.

@@ -10,7 +10,7 @@
     android:paddingRight="12dp"
     android:paddingTop="20dp"
     android:gravity="left"
-    tools:context="coin2play.org.coin2playwallet.ui.base.BaseDrawerActivity">
+    tools:context="cryptodezirecash.org.cryptodezirecashwallet.ui.base.BaseDrawerActivity">
 
 
     <TextView

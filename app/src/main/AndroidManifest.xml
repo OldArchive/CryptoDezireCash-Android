@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="coin2play.org.coin2playwallet">
+    package="cryptodezirecash.org.cryptodezirecashwallet">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name=".Coin2PlayApplication"
+        android:name=".CryptoDezireCashApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -164,11 +164,11 @@
             android:taskAffinity=""
             android:theme="@android:style/Theme.Dialog" />
 
-        <service android:name=".service.Coin2PlayWalletService" />
+        <service android:name=".service.CryptoDezireCashWalletService" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="coin2play.org.coin2playwallet.myfileprovider"
+            android:authorities="cryptodezirecash.org.cryptodezirecashwallet.myfileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

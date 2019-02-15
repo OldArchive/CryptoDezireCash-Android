@@ -118,7 +118,7 @@
     <orderEntry type="library" name="Gradle: com.madgag.spongycastle:core:1.54.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:25.3.1@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/akshaycm/Documents/Coin2Play-Android/mobile/lib/coin2playj-core-0.14.3-12.1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/akshaycm/Documents/CryptoDezireCash-Android/mobile/lib/cryptodezirecashj-core-0.14.3-12.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.10@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-25.3.1" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp:okhttp:2.7.5@jar" level="project" />
@@ -128,7 +128,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks-license-11.6.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support.test:rules-0.5" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/akshaycm/Documents/Coin2Play-Android/mobile/lib/furszy-non-blocking-client-0.0.1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/akshaycm/Documents/CryptoDezireCash-Android/mobile/lib/furszy-non-blocking-client-0.0.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.slf4j:slf4j-simple:1.7.5@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-vision-license-11.6.2" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:glide:3.6.0@jar" level="project" />

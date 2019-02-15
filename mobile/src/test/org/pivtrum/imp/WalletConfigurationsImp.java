@@ -1,8 +1,8 @@
 package org.pivtrum.imp;
 
-import org.coin2playj.core.Context;
-import org.coin2playj.core.NetworkParameters;
-import org.coin2playj.params.TestNet3Params;
+import org.cryptodezirecashj.core.Context;
+import org.cryptodezirecashj.core.NetworkParameters;
+import org.cryptodezirecashj.params.TestNet3Params;
 
 import global.WalletConfiguration;
 

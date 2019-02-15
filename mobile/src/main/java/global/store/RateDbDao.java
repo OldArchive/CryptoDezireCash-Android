@@ -1,6 +1,6 @@
 package global.store;
 
-import global.Coin2PlayRate;
+import global.CryptoDezireCashRate;
 
 /**
  * Created by akshaynexus on 3/3/18.
@@ -8,9 +8,9 @@ import global.Coin2PlayRate;
 
 public interface RateDbDao<T> extends AbstractDbDao<T>{
 
-    Coin2PlayRate getRate(String coin);
+    CryptoDezireCashRate getRate(String coin);
 
 
-    void insertOrUpdateIfExist(Coin2PlayRate coin2playRate);
+    void insertOrUpdateIfExist(CryptoDezireCashRate cryptodezirecashRate);
 
 }

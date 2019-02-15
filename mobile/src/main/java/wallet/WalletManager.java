@@ -2,30 +2,30 @@ package wallet;
 
 import com.google.common.base.Charsets;
 
-import org.coin2playj.core.Address;
-import org.coin2playj.core.BlockChain;
-import org.coin2playj.core.Coin;
-import org.coin2playj.core.InsufficientMoneyException;
-import org.coin2playj.core.PeerGroup;
-import org.coin2playj.core.Sha256Hash;
-import org.coin2playj.core.Transaction;
-import org.coin2playj.core.TransactionInput;
-import org.coin2playj.core.TransactionOutput;
-import org.coin2playj.core.Utils;
-import org.coin2playj.core.listeners.TransactionConfidenceEventListener;
-import org.coin2playj.crypto.DeterministicKey;
-import org.coin2playj.crypto.LinuxSecureRandom;
-import org.coin2playj.crypto.MnemonicCode;
-import org.coin2playj.crypto.MnemonicException;
-import org.coin2playj.wallet.DeterministicKeyChain;
-import org.coin2playj.wallet.DeterministicSeed;
-import org.coin2playj.wallet.Protos;
-import org.coin2playj.wallet.SendRequest;
-import org.coin2playj.wallet.UnreadableWalletException;
-import org.coin2playj.wallet.Wallet;
-import org.coin2playj.wallet.WalletFiles;
-import org.coin2playj.wallet.WalletProtobufSerializer;
-import org.coin2playj.wallet.listeners.WalletCoinsReceivedEventListener;
+import org.cryptodezirecashj.core.Address;
+import org.cryptodezirecashj.core.BlockChain;
+import org.cryptodezirecashj.core.Coin;
+import org.cryptodezirecashj.core.InsufficientMoneyException;
+import org.cryptodezirecashj.core.PeerGroup;
+import org.cryptodezirecashj.core.Sha256Hash;
+import org.cryptodezirecashj.core.Transaction;
+import org.cryptodezirecashj.core.TransactionInput;
+import org.cryptodezirecashj.core.TransactionOutput;
+import org.cryptodezirecashj.core.Utils;
+import org.cryptodezirecashj.core.listeners.TransactionConfidenceEventListener;
+import org.cryptodezirecashj.crypto.DeterministicKey;
+import org.cryptodezirecashj.crypto.LinuxSecureRandom;
+import org.cryptodezirecashj.crypto.MnemonicCode;
+import org.cryptodezirecashj.crypto.MnemonicException;
+import org.cryptodezirecashj.wallet.DeterministicKeyChain;
+import org.cryptodezirecashj.wallet.DeterministicSeed;
+import org.cryptodezirecashj.wallet.Protos;
+import org.cryptodezirecashj.wallet.SendRequest;
+import org.cryptodezirecashj.wallet.UnreadableWalletException;
+import org.cryptodezirecashj.wallet.Wallet;
+import org.cryptodezirecashj.wallet.WalletFiles;
+import org.cryptodezirecashj.wallet.WalletProtobufSerializer;
+import org.cryptodezirecashj.wallet.listeners.WalletCoinsReceivedEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -189,7 +189,7 @@ public class WalletManager {
         wallet.addCoinsReceivedEventListener(new WalletCoinsReceivedEventListener() {
             @Override
             public void onCoinsReceived(Wallet wallet, Transaction transaction, Coin coin, Coin coin1) {
-                org.coin2playj.core.Context.propagate(conf.getWalletContext());
+                org.cryptodezirecashj.core.Context.propagate(conf.getWalletContext());
                 saveWallet();
             }
         });
@@ -201,7 +201,7 @@ public class WalletManager {
         }
         List<String> words = generateMnemonic(SEED_ENTROPY_EXTRA);
         DeterministicSeed seed = new DeterministicSeed(words, null, "", System.currentTimeMillis());
-        return Wallet.fromSeed(conf.getNetworkParams(), seed, DeterministicKeyChain.KeyChainType.BIP44_C2P_ONLY);
+        return Wallet.fromSeed(conf.getNetworkParams(), seed, DeterministicKeyChain.KeyChainType.BIP44_CDZC_ONLY);
     }
 
     public static List<String> generateMnemonic(int entropyBitsSize){
@@ -281,7 +281,7 @@ public class WalletManager {
         wallet = Wallet.fromSeed(
                 conf.getNetworkParams(),
                 new DeterministicSeed(mnemonic,null,"",timestamp),
-                bip44? DeterministicKeyChain.KeyChainType.BIP44_C2P_ONLY: DeterministicKeyChain.KeyChainType.BIP32
+                bip44? DeterministicKeyChain.KeyChainType.BIP44_CDZC_ONLY: DeterministicKeyChain.KeyChainType.BIP32
         );
         restoreWallet(wallet);
     }

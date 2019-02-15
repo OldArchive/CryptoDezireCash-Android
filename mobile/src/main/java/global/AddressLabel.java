@@ -1,6 +1,6 @@
 package global;
 
-import org.coin2playj.core.Sha256Hash;
+import org.cryptodezirecashj.core.Sha256Hash;
 
 import java.io.Serializable;
 import java.util.ArrayList;

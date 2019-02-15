@@ -1,7 +1,7 @@
 package global;
 
-import org.coin2playj.core.Context;
-import org.coin2playj.core.NetworkParameters;
+import org.cryptodezirecashj.core.Context;
+import org.cryptodezirecashj.core.NetworkParameters;
 
 /**
  * Created by akshaynexus on 6/4/17.
