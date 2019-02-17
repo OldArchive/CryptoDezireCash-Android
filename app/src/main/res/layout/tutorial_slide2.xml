@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:paddingTop="100dp"
     android:paddingBottom="100dp"
-    android:background="@drawable/bg_toolbar_login">
+    android:background="#1e1e1e">
 
 
     <ImageView

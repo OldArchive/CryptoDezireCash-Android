@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,7 +69,7 @@ public class WalletActivity extends BaseDrawerActivity {
 
     private View root;
     private View container_txs;
-
+    ProgressBar mProgressBar;
     private TextView txt_value;
     private TextView txt_unnavailable;
     private TextView txt_local_currency;
@@ -111,7 +112,16 @@ public class WalletActivity extends BaseDrawerActivity {
         */
         localBroadcastManager = LocalBroadcastManager.getInstance(this);
     }
-
+    protected double calculateBlockchainSyncProgress() {
+        long nodeHeight = cryptodezirecashModule.getConnectedPeerHeight();
+        if (nodeHeight>0){
+            // calculate the progress
+            // nodeHeight -> 100 %
+            // current height -> x %
+            return (cryptodezirecashModule.getChainHeight()*100) / nodeHeight;
+        }
+        return -1;
+    }
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         setTitle(R.string.my_wallet);
@@ -125,6 +135,9 @@ public class WalletActivity extends BaseDrawerActivity {
         txt_watch_only = (TextView) containerHeader.findViewById(R.id.txt_watch_only);
         view_background = root.findViewById(R.id.view_background);
         container_syncing = root.findViewById(R.id.container_syncing);
+ mProgressBar = container_syncing.findViewById(R.id.pBar);
+        mProgressBar.setVisibility(View.INVISIBLE);
+
         // Open Send
         root.findViewById(R.id.fab_add).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -303,30 +316,28 @@ public class WalletActivity extends BaseDrawerActivity {
                     Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
                     String address = barcode.displayValue;
                     final String usedAddress;
-                    String bitcoinUrl = address;
-                    String uri = bitcoinUrl;
-                    String query = uri.split("\\?")[1];
-                    final Map<String, String> map = Splitter.on('&').trimResults().withKeyValueSeparator("=").split(query);
+                //    String bitcoinUrl = address;
+                  //  String uri = bitcoinUrl;
+//                    String query = uri.split("\\?")[1];
+                  //  final Map<String, String> map = Splitter.on('&').trimResults().withKeyValueSeparator("=").split(query);
 
 //                    String tempstr =
-                    String addresss = bitcoinUrl.replaceAll("cryptodezirecash:(.*)\\?.*", "$1");
-                    final String amounta = map.get("amount");
-                    final  String label = map.get("label");
-                    Log.i("addressAA", "Map: " + map);
+                //    String addresss = bitcoinUrl.replaceAll("cryptodezirecash:(.*)\\?.*", "$1");
+                 ////   final String amounta = map.get("amount");
+                 //   final  String label = map.get("label");
+                 //   Log.i("addressAA", "Map: " + map);
 
 
 
 
-
-                        Log.i("addressAA", "Scanned Address is : " + address);
-
-//                     SendURI cryptodezirecashUri = new SendURI(addresss);
-                        usedAddress = addresss;
-                    if ( bitcoinUrl.toLowerCase().contains("amount") || bitcoinUrl.toLowerCase().contains("amount") && bitcoinUrl.toLowerCase().contains("label")
-                            ) {
-                        final Coin amount = Coin.parseCoin(amounta);
-                        if (amount != null && Integer.parseInt(amounta) > 0){
-                            final String memo = label.replaceAll("%20","");
+                    if (cryptodezirecashModule.chechAddress(address)){
+                        usedAddress = address;
+                    }else {
+                        SendURI pivxUri = new SendURI(address);
+                        usedAddress = pivxUri.getAddress().toBase58();
+                        final Coin amount = pivxUri.getAmount();
+                        if (amount != null){
+                            final String memo = pivxUri.getMessage();
                             StringBuilder text = new StringBuilder();
                             text.append(getString(R.string.amount)).append(": ").append(amount.toFriendlyString());
                             if (memo != null){
@@ -350,21 +361,11 @@ public class WalletActivity extends BaseDrawerActivity {
                             dialogFragment.setAlignBody(SimpleTextDialog.Align.LEFT);
                             dialogFragment.setImgAlertRes(R.drawable.ic_fab_recieve);
                             dialogFragment.show(getFragmentManager(),"payment_request_dialog");
-                           // DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
                             return;
                         }
 
                     }
-                    else{
-                        DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
-
-                    }
-                        //final Coin amount = Coin.parseCoin(amounta);
-
-
-
-
-
+                    DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
                 }catch (Exception e){
                     e.printStackTrace();
                     Toast.makeText(this,"Bad address",Toast.LENGTH_LONG).show();
@@ -373,6 +374,7 @@ public class WalletActivity extends BaseDrawerActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 
 
 
@@ -405,8 +407,12 @@ public class WalletActivity extends BaseDrawerActivity {
     @Override
     protected void onBlockchainStateChange(){
         if (blockchainState == BlockchainState.SYNCING){
+            mProgressBar.setVisibility(View.VISIBLE);
+            mProgressBar.setProgress((int) Math.round(calculateBlockchainSyncProgress()));
             AnimationUtils.fadeInView(container_syncing,500);
         }else if (blockchainState == BlockchainState.SYNC){
+            mProgressBar.setVisibility(View.VISIBLE);
+            mProgressBar.setProgress((int) Math.round(calculateBlockchainSyncProgress()));
             AnimationUtils.fadeOutGoneView(container_syncing,500);
         }else if (blockchainState == BlockchainState.NOT_CONNECTION){
             AnimationUtils.fadeInView(container_syncing,500);

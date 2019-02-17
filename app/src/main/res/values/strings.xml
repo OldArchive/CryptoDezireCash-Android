@@ -119,7 +119,7 @@
     <string name="settings_change_trusted_node">Change trusted node</string>
     <string name="settings_reset_blockchain">Reset blockchain</string>
     <string name="save">Save</string>
-    <string name="tutorial_message"> CryptoDezireCash\nis a privacy-focused, decentralized, open source cryptocurrency run by a global community comprised of creators, innovators, and technology enthusiasts.</string>
+    <string name="tutorial_message">Privacy-focused, decentralized, cryptocurrency with ecosystem for digital services.</string>
     <!-- Tutorial -->
     <string name="next_words">Next 8 words</string>
     <string name="next">Next</string>

@@ -511,21 +511,18 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
         if (requestCode == RC_BARCODE_CAPTURE){
             if (resultCode== CommonStatusCodes.SUCCESS) {
                 String address = "";
-                try {  Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
-                     address = barcode.displayValue;
+                try {
+                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
 
+                    address = barcode.displayValue;
+
+//                    address = data.getStringExtra(INTENT_EXTRA_RESULT);
                     String usedAddress;
-                    String bitcoinUrl = address;
-                    String addresss = bitcoinUrl.replaceAll("cryptodezirecash:(.*)\\?.*", "$1");
-                    String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
-                    String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
-
-                    if (cryptodezirecashModule.chechAddress(addresss)){
-                        usedAddress = addresss;
+                    if (cryptodezirecashModule.chechAddress(address)){
+                        usedAddress = address;
                     }else {
-                        Log.i("addressAA", "Scanned Address is : " + address);
-                        SendURI cryptodezirecashUri = new SendURI(address);
-                        usedAddress = addresss;
+                        SendURI pivxUri = new SendURI(address);
+                        usedAddress = pivxUri.getAddress().toBase58();
                     }
                     final String tempPubKey = usedAddress;
                     edit_address.setText(tempPubKey);
@@ -533,6 +530,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     e.printStackTrace();
                     Toast.makeText(this,"Bad address "+address,Toast.LENGTH_LONG).show();
                 }
+
             }
         }else if(requestCode == SEND_DETAIL){
             if (resultCode==RESULT_OK) {

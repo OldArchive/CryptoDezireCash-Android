@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#384B6B"
-    android:orientation="horizontal"
+    android:background="@color/gray_87_text"
+    android:orientation="vertical"
     android:paddingTop="12dp"
     android:paddingBottom="12dp"
     android:paddingStart="12dp"
@@ -17,6 +17,7 @@
         android:layout_gravity="center"
         android:src="@drawable/ic_warning_sync"
         android:paddingRight="12dp"
+        android:tint="#6D1112"
         />
 
 
@@ -28,6 +29,7 @@
 
         <TextView
             android:id="@+id/txt_sync"
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sync_in_progress"
@@ -36,7 +38,14 @@
             android:textSize="14sp" />
 
     </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="60"
+        android:progressTint="#a71c20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ProgressBar>
 
 </LinearLayout>
 

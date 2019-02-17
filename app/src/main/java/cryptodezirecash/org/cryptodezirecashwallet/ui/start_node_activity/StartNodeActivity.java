@@ -69,9 +69,7 @@ public class StartNodeActivity extends BaseActivity {
                                     hosts.add(FURSZY_TESTNET_SERVER);
                                 } else
                                     hosts.add(trustedNode.getHost());
-                                 for(int i =0;i<=trustedNodes.size();i++){
-                                     hosts.add(trustedNodes.get(i).getHost());
-                                 }
+
                             }
                             adapter.addAll(hosts);
                             dropdown.setAdapter(adapter);

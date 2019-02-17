@@ -84,6 +84,7 @@ public class BaseDrawerActivity extends CryptoDezireCashActivity implements Navi
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
         View headerLayout = navigationView.getHeaderView(0);
         txt_sync_status = (TextView) headerLayout.findViewById(R.id.txt_sync_status);

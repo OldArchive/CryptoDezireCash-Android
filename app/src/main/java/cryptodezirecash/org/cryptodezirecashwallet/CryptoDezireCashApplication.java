@@ -259,9 +259,9 @@ public class CryptoDezireCashApplication extends Application implements ContextW
     public void setTrustedServer(PivtrumPeerData trustedServer) {
         networkConf.setTrustedServer(trustedServer);
         if (trustedServer.getHost() !=null)
-        cryptodezirecashModule.getConf().saveTrustedNode(trustedServer.getHost(),2221);
+        cryptodezirecashModule.getConf().saveTrustedNode(trustedServer.getHost(),35601);
         else
-            cryptodezirecashModule.getConf().saveTrustedNode("207.148.4.230",2221);
+            cryptodezirecashModule.getConf().saveTrustedNode("seed01.cryptodezirecash.com",35601);
         appConf.saveTrustedNode(trustedServer);
     }
 

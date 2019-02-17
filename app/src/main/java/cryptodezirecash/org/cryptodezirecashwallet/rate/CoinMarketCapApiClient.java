@@ -48,7 +48,7 @@ public class CoinMarketCapApiClient {
     public CryptoDezireCashMarket getCryptoDezireCashPxrice() throws RequestCryptoDezireCashRateException{
         try {
             CryptoDezireCashMarket cryptodezirecashMarket = null;
-            String url = this.URL + "c2p";
+            String url = this.URL + "cdzc";
             HttpResponse httpResponse = get(url);
             // receive response as inputStream
             InputStream inputStream = httpResponse.getEntity().getContent();

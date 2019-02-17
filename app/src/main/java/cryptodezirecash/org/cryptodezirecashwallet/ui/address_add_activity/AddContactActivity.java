@@ -149,23 +149,18 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
                 if (data != null) {
                     try {
                         Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
-                        String address = barcode.displayValue;
-                        String usedAddress;
-                        String bitcoinUrl = address;
-                        String addresss = bitcoinUrl.replaceAll("cryptodezirecash:(.*)\\?.*", "$1");
-                        String label = bitcoinUrl.replaceAll(".*label=(.*)&.*", "$1");
-                        String amounta = bitcoinUrl.replaceAll(".*amount=(.*)(&.*)?", "$1");
 
-                        if (cryptodezirecashModule.chechAddress(addresss)){
-                            usedAddress = addresss;
+                        address = barcode.displayValue;
+                        String usedAddress;
+                        if (cryptodezirecashModule.chechAddress(address)){
+                            usedAddress = address;
                         }else {
-                            SendURI cryptodezirecashUri = new SendURI(address);
-                            usedAddress = addresss;
+                            SendURI pivxUri = new SendURI(address);
+                            usedAddress = pivxUri.getAddress().toBase58();
                         }
                         final String tempPubKey = usedAddress;
                         edit_address.setText(tempPubKey);
                     }catch (Exception e){
-
                         Toast.makeText(this,"Bad address",Toast.LENGTH_LONG).show();
                     }}
             }

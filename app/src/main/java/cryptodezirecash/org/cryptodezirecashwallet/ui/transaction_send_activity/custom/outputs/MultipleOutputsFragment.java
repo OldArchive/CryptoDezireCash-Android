@@ -286,17 +286,12 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                     String address = "";
                     Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
                     address = barcode.displayValue;
-                   // String usedAddress;
-                    String bitcoinUrl = address;
-                    String addresss = bitcoinUrl.replaceAll("cryptodezirecash:(.*)\\?.*", "$1");
-                    //address = data.getStringExtra(INTENT_EXTRA_RESULT);
                     String usedAddress;
-
-                    if (cryptodezirecashModule.chechAddress(addresss)){
-                        usedAddress = addresss;
+                    if (cryptodezirecashModule.chechAddress(address)){
+                        usedAddress = address;
                     }else {
-                        SendURI cryptodezirecashUri = new SendURI(addresss);
-                        usedAddress = addresss;
+                        SendURI pivxUri = new SendURI(address);
+                        usedAddress = pivxUri.getAddress().toBase58();
                     }
                     final String tempPubKey = usedAddress;
                     OutputHolder outputHolder = (OutputHolder) getRecycler().findViewHolderForAdapterPosition(holderWaitingForAddress);
