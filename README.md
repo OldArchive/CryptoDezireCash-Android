@@ -1,6 +1,6 @@
 # CDZC-Wallet
 
-![alt text](https://github.com/CDZC-Project/CDZC-Android/blob/master/banner/Feature%20Image.jpg)
+![alt text](https://cdn.discordapp.com/attachments/497476919475044361/544271546697515009/Logo_with_tex_1t.png)
 
 Welcome to the CDZC mobile wallet for android!
 
@@ -20,11 +20,11 @@ gradle clean build
 
 ### Cloning repository.
 
-Use git clone --recurse-submodules https://github.com/<CDZC or akshaynexus>/CDZC-Android.git
+Use git clone --recurse-submodules https://github.com/akshaynexus/CDZC-Android.git
   
 #### or
 
-Use git clone https://github.com/<CDZC or akshaynexus>/CDZC-Android.git
+Use git clone https://github.com/akshaynexus/CDZC-Android.git
   
 git submodule init
 
