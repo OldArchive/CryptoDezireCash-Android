@@ -3,6 +3,8 @@ package cryptodezirecash.org.cryptodezirecashwallet.ui.tutorial_activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -16,8 +18,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.io.InputStream;
 
 import cryptodezirecash.org.cryptodezirecashwallet.R;
 import cryptodezirecash.org.cryptodezirecashwallet.ui.pincode_activity.PincodeActivity;
@@ -190,8 +195,21 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+            InputStream imageStream = null;
             View view = layoutInflater.inflate(layouts[position], container, false);
+           ImageView mTutImage=view.findViewById(R.id.tutorialImage);
+           switch (position){
+               case 1: imageStream = view.getResources().openRawResource(R.raw.one);break;
+               case 2 : imageStream = view.getResources().openRawResource(R.raw.two);break;
+               case 3 : imageStream = view.getResources().openRawResource(R.raw.three);break;
+
+           }
+if(imageStream != null){
+    Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+    mTutImage.setImageBitmap(bitmap);
+}
+
+
             container.addView(view);
 
             return view;

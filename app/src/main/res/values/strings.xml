@@ -127,14 +127,16 @@
     <string name="back">Back</string>
     <string name="restore">Restore</string>
     <string name="start">Start</string>
-    <string name="title_slide1">CryptoDezireCash is secure</string>
-    <string name="desc_slide1"> with BIP38 Encryption and Decryption of Private Keys</string>
-    <string name="title_slide2">60 SECOND BLOCK TIME</string>
-    <string name="desc_slide2">Already very fast, CDZC transactions using SwiftX are instant with ZERO confirmation wait time required.</string>
-    <string name="title_slide3">Extremely secure and private</string>
-    <string name="desc_slide3">CDZC is aiming it’s sights on establishing the first truly anonymous crypto-currency.</string>
-    <string name="title_slide4">Trusted nodes federation</string>
-    <string name="desc_slide4">Trusted nodes federation make light PoS wallets possible, you can rely on them or create your own trusted node!</string>
+    <string name="title_slide1">CryptoDezireCash </string>
+    <string name="desc_slide1"> is a first step to launch a decentralized ecosystem for digital services.</string>
+    <string name="title_slide2">Universal Payment Method</string>
+    <string name="desc_slide2">Fast, efficient, and decentralized, $CDZC will be used as the mode of payment for all services on the CryptoDezire system.
+</string>
+    <string name="title_slide3">Permissionless</string>
+    <string name="desc_slide3">CryptoDezireCash (CDZC) is a peer-to-peer electronic payment system that allows funds to be sent directly from one party to another without going through an Intermediary.
+</string>
+    <string name="title_slide4">Pos and Masternode</string>
+    <string name="desc_slide4">Powered by the revolutionary technology of POS 3.0 and master nodes represent a new layer of network servers to provide a variety of decentralised services, like instant transactions and privacy.</string>
     <string name="option_add_node">Add node</string>
     <string name="report_issue_dialog_description">Issue description</string>
     <string name="report_issue_dialog_collect_device_info">Append device information</string>
