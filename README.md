@@ -20,11 +20,11 @@ gradle clean build
 
 ### Cloning repository.
 
-Use git clone --recurse-submodules https://github.com/akshaynexus/CDZC-Android.git
+Use git clone --recurse-submodules https://github.com/akshaynexus/CryptoDezireCash-Android.git
   
 #### or
 
-Use git clone https://github.com/akshaynexus/CDZC-Android.git
+Use git clone https://github.com/akshaynexus/CryptoDezireCash-Android.git
   
 git submodule init
 
