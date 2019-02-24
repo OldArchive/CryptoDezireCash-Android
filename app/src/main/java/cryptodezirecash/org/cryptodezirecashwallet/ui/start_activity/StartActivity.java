@@ -1,10 +1,15 @@
 package cryptodezirecash.org.cryptodezirecashwallet.ui.start_activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import java.io.InputStream;
 
 import cryptodezirecash.org.cryptodezirecashwallet.R;
 import cryptodezirecash.org.cryptodezirecashwallet.ui.base.BaseActivity;
@@ -25,7 +30,10 @@ public class StartActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         getLayoutInflater().inflate(R.layout.fragment_start, container);
-
+ ImageView logo = (ImageView) findViewById(R.id.logoView);
+        InputStream imageStreamz = this.getResources().openRawResource(R.raw.cdzc_2k);
+        Bitmap bitmapz = BitmapFactory.decodeStream(imageStreamz);
+        logo.setImageBitmap(bitmapz);
         buttonCreate = (Button) findViewById(R.id.btnCreate);
         buttonCreate.setOnClickListener(new View.OnClickListener() {
             @Override

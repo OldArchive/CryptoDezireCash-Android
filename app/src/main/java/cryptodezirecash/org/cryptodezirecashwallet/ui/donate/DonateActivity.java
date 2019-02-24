@@ -1,11 +1,15 @@
 package cryptodezirecash.org.cryptodezirecashwallet.ui.donate;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.cryptodezirecashj.core.Coin;
@@ -14,6 +18,8 @@ import org.cryptodezirecashj.core.MasterNodeSystem;
 import org.cryptodezirecashj.core.MasternodeInfo;
 import org.cryptodezirecashj.core.MasternodeManager;
 import org.cryptodezirecashj.core.Transaction;
+
+import java.io.InputStream;
 
 import cryptodezirecash.org.cryptodezirecashwallet.R;
 import cryptodezirecash.org.cryptodezirecashwallet.module.CryptoDezireCashContext;
@@ -36,12 +42,16 @@ public class DonateActivity extends BaseDrawerActivity {
     private EditText edit_amount;
     private Button btn_donate;
     private SimpleTextDialog errorDialog;
-
+private ImageView coinlogo;
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.donations_fragment,container);
         edit_amount = (EditText) root.findViewById(R.id.edit_amount);
         btn_donate = (Button) root.findViewById(R.id.btn_donate);
+        coinlogo = (ImageView) root.findViewById(R.id.coinlogoimgv);
+        InputStream imageStreamz = this.getResources().openRawResource(R.raw.cdzc_2k);
+        Bitmap bitmapz = BitmapFactory.decodeStream(imageStreamz);
+        coinlogo.setImageBitmap(bitmapz);
         //setTheme(android.R.style.DeviceDefault_ButtonBar);
         btn_donate.setOnClickListener(new View.OnClickListener() {
             @Override

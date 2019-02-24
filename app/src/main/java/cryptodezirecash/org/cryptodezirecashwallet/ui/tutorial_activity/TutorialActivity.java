@@ -202,7 +202,7 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
                case 1: imageStream = view.getResources().openRawResource(R.raw.one);break;
                case 2 : imageStream = view.getResources().openRawResource(R.raw.two);break;
                case 3 : imageStream = view.getResources().openRawResource(R.raw.three);break;
-
+               case 0: imageStream = view.getResources().openRawResource(R.raw.cdzc_2k);break;
            }
 if(imageStream != null){
     Bitmap bitmap = BitmapFactory.decodeStream(imageStream);

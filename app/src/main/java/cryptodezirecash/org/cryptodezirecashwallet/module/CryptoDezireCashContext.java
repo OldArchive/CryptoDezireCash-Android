@@ -33,13 +33,13 @@ public class CryptoDezireCashContext {
     public static final String URL_FIAT_CURRENCIES_RATE = "https://bitpay.com/rates";
 
     // report mail
-    public static final String REPORT_EMAIL = "support@cryptodezirecash.io";
+    public static final String REPORT_EMAIL = "support@cryptodezire.com";
     /** Subject line for manually reported issues. */
     public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 
     /** Donation address */
     //PLADMINAddr
-    public static final String DONATE_ADDRESS = "cQPkk9Lyko4HCZJs2xskJop1C9kSv3L8Ut";
+    public static final String DONATE_ADDRESS = "D9pMZZttC6zjpT32n6wHQNf3gxy4TaTFGx";
 
     public static final class Files{
 

@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -18,6 +20,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.InputStream;
 
 import chain.BlockchainState;
 import cryptodezirecash.org.cryptodezirecashwallet.BuildConfig;
@@ -44,7 +48,8 @@ public class BaseDrawerActivity extends CryptoDezireCashActivity implements Navi
     private TextView txt_app_version;
     private TextView txt_sync_status;
     private ImageView img_sync;
-
+    private ImageView img_coinlogo;
+private ImageView img_3d_logo;
     protected BlockchainState blockchainState = BlockchainState.SYNCING;
 
     private BroadcastReceiver walletServiceReceiver = new BroadcastReceiver() {
@@ -87,6 +92,14 @@ public class BaseDrawerActivity extends CryptoDezireCashActivity implements Navi
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
         View headerLayout = navigationView.getHeaderView(0);
+        img_3d_logo = headerLayout.findViewById(R.id.imageView);
+        InputStream imageStream = this.getResources().openRawResource(R.raw.coin3d);
+        Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+        img_3d_logo.setImageBitmap(bitmap);
+        img_coinlogo = (ImageView) findViewById(R.id.imgFooterLogo);
+        InputStream imageStreamz = this.getResources().openRawResource(R.raw.cdzc_2k);
+        Bitmap bitmapz = BitmapFactory.decodeStream(imageStreamz);
+        img_coinlogo.setImageBitmap(bitmapz);
         txt_sync_status = (TextView) headerLayout.findViewById(R.id.txt_sync_status);
         img_sync = (ImageView) headerLayout.findViewById(R.id.img_sync);
         txt_app_version = (TextView) navigationView.findViewById(R.id.txt_app_version);
